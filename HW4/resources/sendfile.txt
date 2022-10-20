@@ -1,0 +1,59 @@
+Machine learning is one of the most exciting recent technologies.
+In this class, you learn about the state of the art and also gain practice
+implementing and deploying these machine learning algorithms yourself. 
+You've probably used a learning algorithm dozens of times a day without knowing it. 
+Every time you use a web search engine like Google or Bing to search the internet, 
+one of the reasons that works so well is because a learning algorithm, one implemented 
+by Google or Microsoft, has learned how to rank web pages. Every time you use Facebook or
+Apple's photo typing application and it recognizes your friends' photos, that's
+also machine learning. Every time you read your email and your spam filter saves you
+from having to wade through tons of spam email, that's also a learning algorithm.
+
+So why is machine learning so prevalent today?
+It turns out that machine learning is a field that had grown out of the field of
+AI, or artificial intelligence. We wanted to build intelligent machines and it turns
+out that there are a few basic things that we could program a machine to do such as
+how to find the shortest path from A to B. But for the most part we just did not know
+how to write AI programs to do the more interesting things such as web search or
+photo tagging or email anti-spam. There was a realization that the only way to do
+these things was to have a machine learn to do it by itself. So, machine learning
+was developed as a new capability for computers and today it touches many
+segments of industry and basic science. 
+
+For me, I work on machine learning and
+in a typical week I might end up talking to helicopter pilots, biologists, a bunch
+of computer systems people  and averaging
+two or three times a week I get email from people in industry from Silicon Valley
+contacting me who have an interest in applying learning algorithms to their own
+problems. This is a sign of the range of problems that machine learning touches.
+There is autonomous robotics, computational biology, tons of things in Silicon Valley
+that machine learning is having an impact on. Here are some other examples of
+machine learning. There's database mining. One of the reasons machine learning has so
+pervaded is the growth of the web and the growth of automation. All this means that
+we have much larger data sets than ever before. So, for example tons of Silicon
+Valley companies are today collecting web click data, also called clickstream data,
+and are trying to use machine learning algorithms to mine this data to understand
+the users better and to serve the users better. 
+
+Every time you go to Amazon or Netflix or iTunes Genius, and it
+recommends the movies or products and music to you, that's a learning algorithm.
+If you think about it they have million users; there is no way to write a million
+different programs for your million users. The only way to have software give these
+customized recommendations is to learn by itself to customize itself to
+your preferences. Finally learning algorithms are being used today to
+understand human learning and to understand the brain. We'll talk about
+how researches are using this to make progress towards the big AI dream. 
+
+A few months ago, a student showed me an article on the top twelve IT skills. The skills
+that information technology hiring managers cannot say no to. It was a
+slightly older article, but at the top of this list of the twelve most desirable IT
+skills was machine learning. Here at Stanford, the number of recruiters
+that contact me asking if I know any graduating machine learning students
+is far larger than the machine learning students we graduate each year. So I
+think there is a vast, unfulfilled demand for this skill set, and this is a great time to
+be learning about machine learning, and I hope to teach you a lot about machine
+learning in this class. We'll start to give a more formal
+definition of what is machine learning. And we'll begin to talk about the main
+types of machine learning problems and algorithms. You'll pick up some of the
+main machine learning terminology, and start to get a sense of what are the
+different algorithms, and when each one might be appropriate.
