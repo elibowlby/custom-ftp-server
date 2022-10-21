@@ -15,6 +15,7 @@
 #include <signal.h>
 #include <unistd.h>
 #include <string.h>
+#include <arpa/inet.h>
 #include <sys/wait.h>
 
 
