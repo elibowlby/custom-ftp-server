@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
     // Check and set program arguments
     if (argc != 3)
     {
-        printf("Error: Three arguments are needed!");
+        printf("Error: Three arguments are needed!\n");
         exit(1);
     }
 
@@ -52,7 +52,7 @@ int main(int argc, char *argv[])
     // Create socket
     if ((s = socket(PF_INET, SOCK_DGRAM, 0) < 0))
     {
-        perror("Error: Socket failed!");
+        perror("Error: Socket failed!\n");
         exit(1);
     }
 
