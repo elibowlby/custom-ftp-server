@@ -14,7 +14,7 @@ int main(void)
     // Socket descriptor (reference)
     int s;
     // Number of bytes to send or receive
-    int len = 0;
+    int len;
     // Data buffer
     char buffer[256];
     // Server socket address
@@ -29,10 +29,11 @@ int main(void)
     memset(&servAddr, 0, sizeof(servAddr));
     // Family field
     servAddr.sin_family = AF_INET;
-    // Default IP address
-    servAddr.sin_addr.s_addr = htonl(INADDR_ANY);
     // Default port number
     servAddr.sin_port = htons(SERVER_PORT);
+    // Default IP address
+    servAddr.sin_addr.s_addr = htonl(INADDR_ANY);
+
 
     // Create listen socket
     if (s = socket(PF_INET, SOCK_DGRAM, 0) < 0)
