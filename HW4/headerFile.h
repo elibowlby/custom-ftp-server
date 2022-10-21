@@ -53,5 +53,5 @@ struct sockaddr_in
 
 struct in_addr
 {
-    unsigned long s_addr; // The 32 bit IP address
+    unsigned long sin_addr; // The 32 bit IP address
 };

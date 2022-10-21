@@ -7,7 +7,7 @@
 /*********************/
 
 // FTP echo server program
-#include "headerFiles.h"
+#include "headerFile.h"
 
 int main(void)
 {
@@ -23,15 +23,17 @@ int main(void)
     // Number of bytes to send or receive
     int len = 0;
     // Maximum number of bytes to receive
-    int maxLen = sizeof(buffer)
-        // Number of bytes for each receive call
-        int waitSize = 16;
+    int maxLen = sizeof(buffer);
+    // Number of bytes for each receive call
+    int waitSize = 16;
     // Server address
     struct sockaddr_in servAddr;
     // Client address
     struct sockaddr_in clntAddr;
     // Length of client socket address
     int clntAddrLen;
+    // Default server port
+    const int SERV_PORT = 52677;
 
     // Build local (server) socket address
     // Set socket structure all to 0
@@ -39,9 +41,9 @@ int main(void)
     // Family field
     servAddr.sin_family = AF_INET;
     // Default IP address
-    servAddr.sin_addr.s_addr = htonl(INADDR_ANY);
+    servAddr.sin_addr.sin_addr = htonl(INADDR_ANY);
     // Default port number
-    servAddr.sin_port = htons(SERVER_PORT);
+    servAddr.sin_port = htons(SERV_PORT);
 
     // Create listen socket
     if (ls = socket(PF_INET, SOCK_STREAM, 0) < 0)
@@ -58,7 +60,7 @@ int main(void)
     }
 
     // Listen to connection requests
-    if (listen(ls, wait size) < 0)
+    if (listen(ls, waitSize) < 0)
     {
         perror("Error: Listening failed!");
         exit(1);
@@ -76,6 +78,8 @@ int main(void)
         }
 
         // Data transfer section
+        // Initilize iterator
+        int n = 0;
         while ((n = recv(s, ptr, maxLen, 0)) > 0)
         {
             // Move pointer along the buffer

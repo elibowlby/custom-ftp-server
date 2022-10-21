@@ -18,6 +18,8 @@ int main(int argc, char *argv[])
     int s;
     // Number of bytes in each receive call
     int n;
+    // Data buffer
+    char buffer[256 + 1];
     // Server name
     char *servName;
     // Server port
@@ -26,8 +28,8 @@ int main(int argc, char *argv[])
     char *string;
     // Length of string to be echoed
     int len;
-    // Data buffer
-    char buffer[256 + 1];
+    // Maximum number of bytes to receive
+    int maxLen = sizeof(buffer);
     // Pointer to move along the buffer
     char *ptr = buffer;
     // Server socket address
@@ -40,17 +42,19 @@ int main(int argc, char *argv[])
         exit(1);
     }
 
-    servName = arg[1];
-    servPort = atoi(arg[2]);
-    string = arg[3];
+    servName = argv[1];
+    servPort = atoi(argv[2]);
+    string = argv[3];
 
     // Build server socket address
     memset(&servAddr, 0, sizeof(servAddr));
+
+    // Server IP address;
     servAddr.sin_family = AF_INET;
-    // Server IP address
-    inet_pton(AF_INET, serverName, &servAddr.sin_addr);
     // Server port number
     servAddr.sin_port = htons(servPort);
+
+    inet_pton(AF_INET, servName, &servAddr.sin_addr);
 
     // Create socket
     if ((s = socket(PF_INET, SOCK_STREAM, 0) < 0))
@@ -60,7 +64,7 @@ int main(int argc, char *argv[])
     }
 
     // Connect to the server
-    if (connect(sf, (struct sockaddr *)&servAddr, sizeof(servAddr)) < 0)
+    if (connect(s, (struct sockaddr *)&servAddr, sizeof(servAddr)) < 0)
     {
         perror("Error: Connection failed!");
         exit(1);
@@ -75,6 +79,7 @@ int main(int argc, char *argv[])
         // Adjust the maximum number of bytes
         maxLen -= n;
         // Update the length of the string received
+        len += n;
     } // End of while loop
 
     // Print and verify echoed string
