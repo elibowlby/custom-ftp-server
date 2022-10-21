@@ -44,9 +44,10 @@ int main(int argc, char *argv[])
 
     // Server IP address;
     servAddr.sin_family = AF_INET;
-    inet_pton(AF_INET, servName, &servAddr.sin_addr);
     // Server port number
     servAddr.sin_port = htons(servPort);
+    inet_pton(AF_INET, servName, &servAddr.sin_addr);
+
 
     // Create socket
     if ((s = socket(PF_INET, SOCK_DGRAM, 0) < 0))
