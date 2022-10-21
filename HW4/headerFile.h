@@ -8,29 +8,17 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/types.h>
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <netdb.h>
 #include <errno.h>
 #include <signal.h>
 #include <unistd.h>
 #include <string.h>
-
-#ifdef _WIN32
-// For Windows
-int betriebssystem = 1;
-#include <winsock2.h>
-#include <ws2tcpip.h>
-#include <iphlpapi.h>
-#include <ws2def.h>
-#pragma comment(lib, "Ws2_32.lib")
-#include <windows.h>
-#include <io.h>
-#else
-#include <sys/socket.h>
-#include <netinet/in.h>
 #include <arpa/inet.h>
-#include <netdb.h>
 #include <sys/wait.h>
-int betriebssystem = 2;
-#endif
+
+
 
 struct sockaddr
 {
