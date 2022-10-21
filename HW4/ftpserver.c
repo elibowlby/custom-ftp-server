@@ -23,8 +23,6 @@ int main(void)
     struct sockaddr_in clntAddr;
     // Length of client socket address
     int clntAddrLen;
-    // Default server port
-    const int SERV_PORT = 52677;
 
     // Build local (server) socket address
     // Set socket structure all to 0
