@@ -18,6 +18,8 @@
 #include <sys/wait.h>
 
 
+// Structs are already defined in import libraries
+
 // struct sockaddr
 // {
 //     unsigned short
