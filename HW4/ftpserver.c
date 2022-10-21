@@ -32,7 +32,7 @@ int main(void)
     // Default IP address
     servAddr.sin_addr.s_addr = htonl(INADDR_ANY);
     // Default port number
-    servAddr.sin_port = htons(SERVER_PORT);
+    servAddr.sin_port = htons(52677);
 
 
 
