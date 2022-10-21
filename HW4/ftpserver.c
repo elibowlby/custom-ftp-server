@@ -5,29 +5,21 @@
 // 10/21/2022
 
 
-// FTP echo server program
+// UDP echo server program
 #include "headerFile.h"
 
 int main(void)
 {
     // Declare and define variables
-    // Listen socket descriptor (reference)
-    int ls;
     // Socket descriptor (reference)
     int s;
-    // Data buffer
-    char buffer[256];
-    // Data buffer
-    char *ptr = buffer;
     // Number of bytes to send or receive
     int len = 0;
-    // Maximum number of bytes to receive
-    int maxLen = sizeof(buffer);
-    // Number of bytes for each receive call
-    int waitSize = 16;
-    // Server address
+    // Data buffer
+    char buffer[256];
+    // Server socket address
     struct sockaddr_in servAddr;
-    // Client address
+    // Client socket address
     struct sockaddr_in clntAddr;
     // Length of client socket address
     int clntAddrLen;
@@ -45,54 +37,25 @@ int main(void)
     servAddr.sin_port = htons(SERV_PORT);
 
     // Create listen socket
-    if (ls = socket(PF_INET, SOCK_STREAM, 0) < 0)
+    if (s = socket(PF_INET, SOCK_DGRAM, 0) < 0)
     {
-        perror("Error: Listen socket failed!");
+        perror("Error: Socket failed!");
         exit(1);
     }
 
     // Bind listen socket to local address
-    if (bind(ls, &servAddr, sizeof(servAddr)) < 0)
+    if (bind(s, (struct sockaddr*)&servAddr, sizeof(servAddr)) < 0)
     {
-        perror("Error: bind failed!");
+        perror("Error: Bind failed!");
         exit(1);
     }
 
-    // Listen to connection requests
-    if (listen(ls, waitSize) < 0)
-    {
-        perror("Error: Listening failed!");
-        exit(1);
-    }
-
-    // Handle the connection
     // Run forever
     for (;;)
     {
-        // Accept connections from client
-        if (s = accept(ls, &clntAddr, &clntAddrLen) < 0)
-        {
-            perror("Error: Accepting failed!");
-            exit(1);
-        }
-
-        // Data transfer section
-        // Initilize iterator
-        int n = 0;
-        while ((n = recv(s, ptr, maxLen, 0)) > 0)
-        {
-            // Move pointer along the buffer
-            ptr += n;
-            // Adjust maximum number of bytes to receive
-            maxLen -= n;
-            // Update number of bytes received
-            len + -n;
-        }
-
-        // Send back (echo) all bytes received
-        send(s, buffer, len, 0);
-
-        // Close the socket
-        close(s);
+        // Receive string
+        len = recvfrom(s, buffer, sizeof(buffer), 0, (struct sockaddr*)&clntAddr, &clntAddrLen);
+        // Send sstring
+        sendto(s, buffer, len, 0, (struct sockaddr*)&clntAddr, sizeof(clntAddr));
     } // End of for loop
 } // End of echo server program
