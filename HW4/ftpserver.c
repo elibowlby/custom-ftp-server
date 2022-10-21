@@ -35,7 +35,7 @@ int main(void)
     servAddr.sin_port = htons(52677);
 
     // Create listen socket
-    if ((s = socket (PF_INET, SOCK_DGRAM, 0) < 0);
+    if (s = socket (PF_INET, SOCK_DGRAM, 0) < 0);
     {
         perror("Error: Socket failed!\n");
         exit(1);
