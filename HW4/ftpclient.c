@@ -44,7 +44,7 @@ int main(int argc, char *argv[])
 
     // Server IP address;
     servAddr.sin_family = AF_INET;
-    inet_pton(AF_INET, servName, &servAddr.s_addr);
+    inet_pton(AF_INET, servName, &servAddr.sin_addr);
     // Server port number
     servAddr.sin_port = htons(servPort);
 

@@ -42,13 +42,3 @@
 // {
 //     unsigned long s_addr; // The 32 bit IP address
 // };
-
-struct sockaddr_in myaddr;
-int s;
-const int SERV_PORT = 52677;
-myaddr.sin_family = AF_INET;
-myaddr.sin_port = htons(SERV_PORT); // host to network short
-inet_aton(AF_INET, &myaddr.sin_addr.s_addr);
-//inet_aton:: convert from a struct in_addr to a string in dots-and-numbers
-s = socket(PF_INET, SOCK_STREAM, 0);
-bind(s, (struct sockaddr*)myaddr, sizeof(myaddr));
