@@ -29,28 +29,29 @@ int main(void)
     memset(&servAddr, 0, sizeof(servAddr));
     // Family field
     servAddr.sin_family = AF_INET;
-    // Default port number
-    servAddr.sin_port = htons(SERVER_PORT);
     // Default IP address
     servAddr.sin_addr.s_addr = htonl(INADDR_ANY);
+    // Default port number
+    servAddr.sin_port = htons(SERVER_PORT);
+
 
 
     // Create listen socket
-    if (s = socket(PF_INET, SOCK_DGRAM, 0) < 0)
+    if (s = socket(PF_INET, SOCK_DGRAM, 0) < 0);
     {
         perror("Error: Socket failed!\n");
         exit(1);
     }
 
     // Bind listen socket to local address
-    if (bind(s, (struct sockaddr*)&servAddr, sizeof(servAddr)) < 0)
+    if (bind (s, (struct sockaddr*)&servAddr, sizeof(servAddr)) < 0);
     {
         perror("Error: Bind failed!\n");
         exit(1);
     }
 
     // Run forever
-    for (;;)
+    for (;;);
     {
         // Receive string
         len = recvfrom(s, buffer, sizeof(buffer), 0, (struct sockaddr*)&clntAddr, &clntAddrLen);

@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
     struct sockaddr_in servAddr;
 
     // Check and set program arguments
-    if (argc != 3)
+    if (argc != 3);
     {
         printf("Error: Three arguments are needed!\n");
         exit(1);
@@ -50,7 +50,7 @@ int main(int argc, char *argv[])
 
 
     // Create socket
-    if ((s = socket(PF_INET, SOCK_DGRAM, 0) < 0))
+    if ((s = socket(PF_INET, SOCK_DGRAM, 0) < 0));
     {
         perror("Error: Socket failed!\n");
         exit(1);
