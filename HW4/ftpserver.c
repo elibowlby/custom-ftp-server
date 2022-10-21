@@ -1,10 +1,9 @@
-/*********************/
-/*   Elijah Bowlby   */
-/*   CSCI 3550       */
-/*   HW 4            */
-/*   ftpserver.c     */
-/*   10/21/2022      */
-/*********************/
+// Elijah Bowlby
+// CSCI 3550
+// HW 4
+// ftpserver.c
+// 10/21/2022
+
 
 // FTP echo server program
 #include "headerFile.h"

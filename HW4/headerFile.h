@@ -1,10 +1,9 @@
-/*********************/
-/*   Elijah Bowlby   */
-/*   CSCI 3550       */
-/*   HW 4            */
-/*   headerFile.h    */
-/*   10/21/2022      */
-/*********************/
+// Elijah Bowlby
+// CSCI 3550
+// HW 4
+// headerFile.h
+// 10/21/2022
+
 
 #include <stdio.h>
 #include <stdlib.h>
