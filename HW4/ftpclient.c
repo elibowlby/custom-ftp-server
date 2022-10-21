@@ -15,16 +15,16 @@ int main(int argc, char *argv[])
     // Declare and define variables
     // Socket descriptor
     int s;
-    // Data buffer
-    char buffer[256 + 1];
+    // Length of string to be echoed
+    int len;
     // Server name
     char *servName;
     // Server port
     int servPort;
     // String to be echoed
     char *string;
-    // Length of string to be echoed
-    int len;
+    // Data buffer
+    char buffer[256 + 1];
     // Server socket address
     struct sockaddr_in servAddr;
 
@@ -44,9 +44,9 @@ int main(int argc, char *argv[])
 
     // Server IP address;
     servAddr.sin_family = AF_INET;
+    inet_pton(AF_INET, servName, &servAddr.s_addr);
     // Server port number
     servAddr.sin_port = htons(servPort);
-    inet_pton(AF_INET, servName, &servAddr.sin_addr);
 
 
     // Create socket
