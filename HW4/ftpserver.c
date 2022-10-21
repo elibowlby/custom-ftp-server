@@ -34,10 +34,8 @@ int main(void)
     // Default port number
     servAddr.sin_port = htons(52677);
 
-
-
     // Create listen socket
-    if (s = socket(PF_INET, SOCK_DGRAM, 0) < 0);
+    if ((s = socket (PF_INET, SOCK_DGRAM, 0) < 0);
     {
         perror("Error: Socket failed!\n");
         exit(1);
@@ -51,7 +49,7 @@ int main(void)
     }
 
     // Run forever
-    for (;;);
+    for (;;)
     {
         // Receive string
         len = recvfrom(s, buffer, sizeof(buffer), 0, (struct sockaddr*)&clntAddr, &clntAddrLen);
