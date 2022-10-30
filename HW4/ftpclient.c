@@ -63,8 +63,7 @@ int main(int argc, char** argv)
     
     // Print and verify echoed string
     buffer[len] = '\0';
-    printf("Echo string received: ");
-    fputs(buffer, stdout);
+    printf("Echo string received: " + buffer);
 
     // Close the socket
     close(s);
