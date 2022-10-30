@@ -42,14 +42,14 @@ int main(void)
     }
 
     // Bind listen socket to local address
-    if (bind(s, (struct sockaddr_in *)&servAddr, sizeof(servAddr)) < 0)
+    if (bind(s, (struct sockaddr *)&servAddr, sizeof(servAddr)) < 0)
     {
         perror("Error: Bind failed!\n");
         exit(1);
     }
 
     // Run forever
-    for (;;)
+    for(; ;)  
     {
         // Receive string
         len = recvfrom(s, buffer, sizeof(buffer), 0, (struct sockaddr *)&clntAddr, &clntAddrLen);
