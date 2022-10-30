@@ -32,7 +32,7 @@ int main(void)
     // Default port number
     servAddr.sin_port = htonl(52677);
     // Default IP address
-    servAddr.sin_addr.s_addr = htons(INADDR_ANY);
+    servAddr.sin_addr.s_addr = htons("odin");
 
     // Create listen socket
     if (s = socket (PF_INET, SOCK_DGRAM, 0) < 0)
