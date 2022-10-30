@@ -36,7 +36,7 @@ int main(int argc, char* argv[])
     }
 
     servName = argv[1];
-    servPort = atoi (argv[2]);
+    servPort = argv[2];
     string = argv[3];
 
     // Build server socket address

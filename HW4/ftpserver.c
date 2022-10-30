@@ -30,9 +30,9 @@ int main(void)
     // Family field
     servAddr.sin_family = AF_INET;
     // Default IP address
-    servAddr.sin_addr.s_addr = htonl(INADDR_ANY);
+    servAddr.sin_addr.s_addr = htonl("odin");
     // Default port number
-    servAddr.sin_port = htons(SERVER_PORT);
+    servAddr.sin_port = htons(52677);
 
     // Create listen socket
     if (s = socket (PF_INET, SOCK_DGRAM, 0) < 0)
