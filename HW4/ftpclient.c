@@ -58,12 +58,15 @@ int main(int argc, char** argv)
 
     // Send echo string
     len = sendto(s, string, strlen(string), 0, (struct sockaddr *)&servAddr, sizeof(servAddr));
+    
     // Receive echo string
     recvfrom(s, buffer, len, 0, NULL, NULL);
     
     // Print and verify echoed string
     buffer[len] = '\0';
-    printf("Echo string received: " + buffer);
+    printf ("Echo string received: ");
+    fputs(buffer, stdout);
+    printf("\n");
 
     // Close the socket
     close(s);
