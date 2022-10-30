@@ -28,12 +28,12 @@ int main(int argc, char *argv[])
     // Server socket address
     struct sockaddr_in servAddr;
 
-    // // Check and set program arguments
-    // if (argc != 3);
-    // {
-    //     printf("Error: Three arguments are needed!\n");
-    //     exit(1);
-    // }
+    // Check and set program arguments
+    if (argc != 3)
+    {
+        printf("Error: Three arguments are needed!\n");
+        exit(1);
+    }
 
     servName = argv[1];
     servPort = atoi(argv[2]);
@@ -50,7 +50,7 @@ int main(int argc, char *argv[])
 
 
     // Create socket
-    if ((s = socket(PF_INET, SOCK_DGRAM, 0) < 0));
+    if ((s = socket(PF_INET, SOCK_DGRAM, 0) < 0))
     {
         perror("Error: Socket failed!\n");
         exit(1);
