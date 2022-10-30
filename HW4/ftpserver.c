@@ -32,17 +32,17 @@ int main(void)
     // Default IP address
     servAddr.sin_addr.s_addr = htonl(INADDR_ANY);
     // Default port number
-    servAddr.sin_port = htons(52677);
+    servAddr.sin_port = htons(SERVER_PORT);
 
     // Create listen socket
-    if (s = socket (PF_INET, SOCK_DGRAM, 0) < 0);
+    if (s = socket (PF_INET, SOCK_DGRAM, 0) < 0)
     {
         perror("Error: Socket failed!\n");
         exit(1);
     }
 
     // Bind listen socket to local address
-    if (bind (s, (struct sockaddr*)&servAddr, sizeof(servAddr)) < 0);
+    if (bind (s, (struct sockaddr*)&servAddr, sizeof(servAddr)) < 0)
     {
         perror("Error: Bind failed!\n");
         exit(1);
@@ -53,7 +53,7 @@ int main(void)
     {
         // Receive string
         len = recvfrom(s, buffer, sizeof(buffer), 0, (struct sockaddr*)&clntAddr, &clntAddrLen);
-        // Send sstring
+        // Send string
         sendto(s, buffer, len, 0, (struct sockaddr*)&clntAddr, sizeof(clntAddr));
     } // End of for loop
 } // End of echo server program
