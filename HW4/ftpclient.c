@@ -31,6 +31,9 @@ int main(int argc, char* argv[])
     // Check and set program arguments
     if (argc != 3)
     {
+        printf(argv[1]);
+        printf(argv[2]);
+        printf(argv[3]);
         printf("Error: Three arguments are needed!\n");
         exit(1);
     }
