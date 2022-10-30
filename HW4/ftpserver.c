@@ -35,7 +35,7 @@ int main(void)
     servAddr.sin_addr.s_addr = htons(INADDR_ANY);
 
     // Create listen socket
-    if (s = socket (PF_INET, SOCK_DGRAM, 0) < 0)
+    if (s = socket(PF_INET, SOCK_DGRAM, 0) < 0)
     {
         perror("Error: Socket failed!\n");
         exit(1);
@@ -52,8 +52,8 @@ int main(void)
     for (;;)
     {
         // Receive string
-        len = recvfrom(s, buffer, sizeof(buffer), 0, (struct sockaddr*)&clntAddr, &clntAddrLen);
+        len = recvfrom(s, buffer, sizeof(buffer), 0, (struct sockaddr *)&clntAddr, &clntAddrLen);
         // Send string
-        sendto(s, buffer, len, 0, (struct sockaddr*)&clntAddr, sizeof(clntAddr));
+        sendto(s, buffer, len, 0, (struct sockaddr *)&clntAddr, sizeof(clntAddr));
     } // End of for loop
 } // End of echo server program
