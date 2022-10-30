@@ -10,7 +10,7 @@
 
 // Main method
 // Three arguments to be checked later
-int main(int argc, char *argv[])
+int main(int argc, char* argv[])
 {
     // Declare and define variables
     // Socket descriptor
@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
     struct sockaddr_in servAddr;
 
     // Check and set program arguments
-    if (argv != 3)
+    if (argc != 3)
     {
         printf("Error: Three arguments are needed!\n");
         exit(1);
