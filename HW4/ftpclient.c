@@ -10,7 +10,7 @@
 
 // Main method
 // Three arguments to be checked later
-int main(int argc, char* argv[])
+int main(int argc, char** argv)
 {
     // Declare and define variables
     // Socket descriptor
@@ -28,15 +28,12 @@ int main(int argc, char* argv[])
     // Server socket address
     struct sockaddr_in servAddr;
 
-    // Check and set program arguments
-    if (argc != 3)
-    {
-        printf(argv[1]);
-        printf(argv[2]);
-        printf(argv[3]);
-        printf("Error: Three arguments are needed!\n");
-        exit(1);
-    }
+    // // Check and set program arguments
+    // if (argc != 3)
+    // {
+    //     printf("Error: Three arguments are needed!\n");
+    //     exit(1);
+    // }
 
     servName = argv[1];
     servPort = atoi(argv[2]);
