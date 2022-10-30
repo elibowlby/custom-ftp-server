@@ -18,11 +18,11 @@ int main(int argc, char* argv[])
     // Length of string to be echoed
     int len;
     // Server name
-    char *servName;
+    char* servName;
     // Server port
     int servPort;
     // String to be echoed
-    char *string;
+    char* string;
     // Data buffer
     char buffer[256 + 1];
     // Server socket address
