@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
     struct sockaddr_in servAddr;
 
     // Check and set program arguments
-    if (argc != 3)
+    if (argv != 3)
     {
         printf("Error: Three arguments are needed!\n");
         exit(1);
