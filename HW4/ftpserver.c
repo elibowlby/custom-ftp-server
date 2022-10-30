@@ -30,9 +30,9 @@ int main(void)
     // Family field
     servAddr.sin_family = AF_INET;
     // Default port number
-    servAddr.sin_port = htonl(52678);
+    servAddr.sin_port = htons(52678);
     // Default IP address
-    servAddr.sin_addr.s_addr = htons(INADDR_ANY);
+    servAddr.sin_addr.s_addr = htonl(INADDR_ANY);
 
     // Create listen socket
     if (s = socket(PF_INET, SOCK_DGRAM, 0) < 0)
@@ -42,7 +42,7 @@ int main(void)
     }
 
     // Bind listen socket to local address
-    if ((bind(s, (struct sockaddr *)&servAddr, sizeof(servAddr))) < 0)
+    if (bind(s, (struct sockaddr *)&servAddr, sizeof(servAddr)) < 0)
     {
         perror("Error: Bind failed!\n");
         exit(1);
