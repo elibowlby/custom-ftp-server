@@ -30,7 +30,7 @@ int main(void)
     // Family field
     servAddr.sin_family = AF_INET;
     // Default port number
-    servAddr.sin_port = htons(52678);
+    servAddr.sin_port = htons(SERVER_PORT);
     // Default IP address
     servAddr.sin_addr.s_addr = htonl(INADDR_ANY);
 
