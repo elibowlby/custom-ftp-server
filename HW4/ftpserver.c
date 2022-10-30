@@ -29,10 +29,10 @@ int main(void)
     memset(&servAddr, 0, sizeof(servAddr));
     // Family field
     servAddr.sin_family = AF_INET;
-    // Default IP address
-    servAddr.sin_addr.s_addr = htonl("odin");
     // Default port number
-    servAddr.sin_port = htons(52677);
+    servAddr.sin_port = htonl(SERVER_PORT);
+    // Default IP address
+    servAddr.sin_addr.s_addr = htons(INADDR_ANY);
 
     // Create listen socket
     if (s = socket (PF_INET, SOCK_DGRAM, 0) < 0)
