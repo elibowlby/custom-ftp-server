@@ -36,7 +36,7 @@ int main(void)
 
     // Create listen socket
     
-    if (s = socket(PF_INET, SOCK_DGRAM, 0))
+    if ((s = socket(PF_INET, SOCK_DGRAM, 0)) == -1)
     {
         perror("Error: Socket failed!\n");
         exit(1);
