@@ -52,12 +52,12 @@ int main(void)
     // Run forever
     for(; ;)  
     {
-        printf("Waiting for a file...")
+        printf("Waiting for a file...");
         // Receive string
         len = recvfrom(s, buffer, sizeof(buffer), 0, (struct sockaddr*)&clntAddr, &clntAddrLen);
-        printf("File recieved and saved.")
+        printf("File recieved and saved.");
         // Send string
         sendto(s, buffer, len, 0, (struct sockaddr*)&clntAddr, sizeof(clntAddr));
-        printf("Server still running. Ctrl + C to close.")
+        printf("Server still running. Ctrl + C to close.");
     } // End of for loop
 } // End of echo server program
