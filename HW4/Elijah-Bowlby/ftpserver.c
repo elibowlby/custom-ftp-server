@@ -35,8 +35,8 @@ int main(void)
     servAddr.sin_addr.s_addr = htonl(INADDR_ANY);
 
     // Create listen socket
-    s = socket(PF_INET, SOCK_DGRAM, 0);
-    if (s < 0)
+    
+    if (s = socket(PF_INET, SOCK_DGRAM, 0))
     {
         perror("Error: Socket failed!\n");
         exit(1);
