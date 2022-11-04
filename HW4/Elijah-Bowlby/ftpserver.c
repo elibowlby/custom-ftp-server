@@ -30,13 +30,13 @@ int main(void)
     // Family field
     servAddr.sin_family = AF_INET;
     // Default port number
-    servAddr.sin_port = htons(52677);
+    servAddr.sin_port = htons(52007);
     // Default IP address
     servAddr.sin_addr.s_addr = htonl(INADDR_ANY);
 
     // Create listen socket
     
-    if ((s = socket(PF_INET, SOCK_DGRAM, 0)) == -1)
+    if ((s = socket(PF_INET, SOCK_DGRAM, 0)) < 0)
     {
         perror("Error: Socket failed!\n");
         exit(1);
