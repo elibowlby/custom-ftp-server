@@ -26,7 +26,7 @@ int main(int argc, char** argv)
     // Data buffer
     char buffer[256 + 1];
     // Server socket address
-    const struct sockaddr_in servAddr;
+    struct sockaddr_in servAddr;
 
     // Check and set program arguments
     if (argc < 3)
