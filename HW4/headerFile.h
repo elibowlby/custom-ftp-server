@@ -21,7 +21,7 @@
 
 // Structs are already defined in import libraries
 
-struct sockaddr
+const struct sockaddr
 {
     unsigned short
         // Address family - (2 bytes) holds the family and
@@ -31,7 +31,7 @@ struct sockaddr
         sa_data[14];
 };
 
-struct sockaddr_in
+const struct sockaddr_in
 {
     short sin_family;        // Address family
     unsigned short sin_port; // Port number
@@ -39,7 +39,7 @@ struct sockaddr_in
     unsigned char sin_zero[8];
 };
 
-struct in_addr
+const struct in_addr
 {
     unsigned long s_addr; // The 32 bit IP address
 };
