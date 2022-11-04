@@ -18,9 +18,9 @@ int main(void)
     // Data buffer
     char buffer[256];
     // Server socket address
-    struct sockaddr_in servAddr;
+    const struct sockaddr_in servAddr;
     // Client socket address
-    struct sockaddr_in clntAddr;
+    const struct sockaddr_in clntAddr;
     // Length of client socket address
     int clntAddrLen;
 
