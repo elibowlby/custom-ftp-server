@@ -30,7 +30,7 @@ int main(void)
     // Family field
     servAddr.sin_family = AF_INET;
     // Default port number
-    servAddr.sin_port = htons(52678);
+    servAddr.sin_port = htons(52677);
     // Default IP address
     servAddr.sin_addr.s_addr = htonl(INADDR_ANY);
 
@@ -52,9 +52,12 @@ int main(void)
     // Run forever
     for(; ;)  
     {
+        printf("Waiting for a file...")
         // Receive string
         len = recvfrom(s, buffer, sizeof(buffer), 0, (struct sockaddr*)&clntAddr, &clntAddrLen);
+        printf("File recieved and saved.")
         // Send string
         sendto(s, buffer, len, 0, (struct sockaddr*)&clntAddr, sizeof(clntAddr));
+        printf("Server still running. Ctrl + C to close.")
     } // End of for loop
 } // End of echo server program
