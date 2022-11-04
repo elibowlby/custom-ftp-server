@@ -43,7 +43,7 @@ int main(void)
     }
 
     // Bind listen socket to local address
-    if (bind(s, (struct sockaddr *)&servAddr, sizeof(servAddr)) < 0)
+    if (bind(s, (struct sockaddr*)&servAddr, sizeof(servAddr)) < 0)
     {
         perror("Error: Bind failed!\n");
         exit(1);
@@ -53,8 +53,8 @@ int main(void)
     for(; ;)  
     {
         // Receive string
-        len = recvfrom(s, buffer, sizeof(buffer), 0, (struct sockaddr *)&clntAddr, &clntAddrLen);
+        len = recvfrom(s, buffer, sizeof(buffer), 0, (struct sockaddr*)&clntAddr, &clntAddrLen);
         // Send string
-        sendto(s, buffer, len, 0, (struct sockaddr *)&clntAddr, sizeof(clntAddr));
+        sendto(s, buffer, len, 0, (struct sockaddr*)&clntAddr, sizeof(clntAddr));
     } // End of for loop
 } // End of echo server program
