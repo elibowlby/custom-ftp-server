@@ -1,6 +1,4 @@
 // Elijah Bowlby
-// CSCI 3550
-// HW 4
 // ftpclient.c
 // 10/21/2022
 
